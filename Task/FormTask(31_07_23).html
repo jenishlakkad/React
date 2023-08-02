@@ -1,0 +1,134 @@
+<!-- 
+    Date:- 01/08/23
+    Day:- Monday
+    Task:- Making Form
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        /* #outPut *{
+            border: 1px solid red;
+        } */
+        #outPut > div{
+            width: 70%;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+    </style>
+    
+ </head>
+ <body>
+    <div class="container">
+        <div style="width: 50%; margin: 0 auto;">
+            <form>
+                <div class="mb-1">
+                    <label for="exampleInputId" class="form-label">Id:</label>
+                    <input type="text" class="form-control" id="exampleInputId" aria-describedby="idHelp">
+                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                </div>
+                <div class="mb-1">
+                    <label for="exampleInputName" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                </div>
+                <div class="mb-1">
+                    <label for="exampleInputLastName" class="form-label">Last Name:</label>
+                    <input type="text" class="form-control" id="exampleInputLastName" aria-describedby="lastNameHelp">
+                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                </div>
+                <div class="mb-1">
+                    <label for="exampleInputPhone" class="form-label">Phone No:</label>
+                    <input type="tel" class="form-control" id="exampleInputPhone" aria-describedby="phoneHelp">
+                    <!-- <div id="Help" class="form-text">We'll never share your email with anyone else.</div> -->
+                  </div>
+                <div class="mb-1">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                </div>
+                <div class="mb-1">
+                    <label for="chbQuantity" class="form-label">Hobbies:-</label>
+                    <label for="makingMoney" class="form-label">Making Money-</label>
+                    <input type="checkbox" name="MakingMoney" id="makingMoney"  class="form-check-input">
+                    <label for="exploring" class="form-label">Exploring-</label>
+                    <input type="checkbox" name="Exploring" id="exploring"  class="form-check-input">
+                    <label for="learning" class="form-label">Learning-</label>
+                    <input type="checkbox" name="Learning" id="learning"  class="form-check-input">
+                </div>
+                
+                <div class="mb-1">
+                    <label class="form-label" for="rdbGender">Gender:-</label>
+                    <label for="rdbMale">Male</label>
+                    <input type="radio" value="Male" name="rdbGender" id="rdbMale">
+                    <label for="rdbFemale">Female</label>
+                    <input type="radio" value="female" name="rdbGender" id="rdbFemale">
+                    <label for="rdbOther">Other</label>
+                    <input type="radio" value="other" name="rdbGender" id="rdbOther">
+                </div>
+
+
+                
+                <submit type="button" id="submit" class="btn btn-primary">Submit</submit>
+              </form>
+        </div>
+    </div>
+
+    
+    <div id="outPut">
+        <div class="">
+            <table  class="table">
+                <thead >
+                    <tr >
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Last Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Hobbies</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody id="tBody">
+                    <!-- <tr >
+                        <td class="td1">01</td>
+                        <td class="td2">Jenish</td>
+                        <td class="td3">Lakkad</td>
+                        <td class="td4">1234567890</td>
+                        <td class="td5">j@gmail.com</td>
+                        <td class="td6">MakingMoney</td>
+                        <td class="td7">Male</td>
+                        <td class="td8 delete" onclick="del(this)" > <input  type="button" value="Delete" name="delete" style="background-color: red; " class="rounded" ></td>
+                        <td class="td9 edit" onclick="edit(this)" > <input  type="button" value="Edit" name="edit" style="background-color: rgb(58, 161, 240); " class="rounded" ></td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ###############################      SCRIPT        ###################################### -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+    <script src="JS Files/FormTask(31_07_23).js"></script>
+    
+ </body>
+ </html>
+
+ <!-- 
+    <div class="mb-1 form-check">
+                    <label for="exampleInputHobbies" class="form-label">Hobbies:</label>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Making Money-</label>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                    <label class="form-check-label" for="exampleCheck2">Exploring-</label>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck3">
+                    <label class="form-check-label" for="exampleCheck3">Learning-</label>
+                </div> 
+            -->

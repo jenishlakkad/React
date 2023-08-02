@@ -1,0 +1,28 @@
+Show all the results in seperate table in the format of
+
+Key: Value
+
+1. Get all the Keys starting from 2 - Key
+Object.keys(object).filter(x => x.startsWith("2"))
+
+2. Get all the Keys starting from 1 - Key
+Object.keys(object).filter(x => x.startsWith("1"))
+
+3. Get all numbers from the Object - Value
+Object.keys(object).filter(x => typeof(object[x] === "number")).map(x => object[x])
+
+4. Get all falsy values from Object - Value
+Object.keys(object).filter(x => !object[x]).map(x => object[x])
+
+5. Get all string from Object - Value
+Object.keys(object).filter(x => typeof(object[x]) === "string").map(x => object[x])
+
+6. Get all LOW values from Object - Value
+Object.keys(object).filter(x => object[x] === "LOW").map(x => object[x])
+
+7. Get all values which has space in it - Value
+Object.keys(object).filter(x => typeof(object[x]) === "string" && object[x].includes(" ")).map(x => object[x])
+
+
+
+Estimation: 2 Hrs

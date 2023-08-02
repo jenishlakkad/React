@@ -1,0 +1,51 @@
+[1,3,"Test", 0, "", -1, null, undefined, "Hello World", "hello", "workd", 54, false, true, "-0", "null"]
+
+
+1. Get all the number from array
+	array.filter(x=> typeof(x)=='number')
+	output:[1, 3, 0, -1, 54]
+
+2. Get all the string from array
+	array.filter(x=> typeof(x)=='string')
+	output:['Test', '', 'Hello World', 'hello', 'workd', '-0', 'null']
+
+3. Get all falsy values from array
+	array.filter(Boolean => !Boolean)
+	output:[0, '', null, undefined, false]
+
+4. Get all truty values from array
+	array.filter(Boolean)
+	output:[1, 3, 'Test', -1, 'Hello World', 'hello', 'workd', 54, true, '-0', 'null']
+
+5. Get sum of all number in array
+	data = []
+	data = array.filter(x=> typeof(x)=='number')
+	// [1, 3, 0, -1, 54]
+	data.reduce((a,b)=>a+b)	
+	output:57
+
+6. Get all NAN values
+	arr.filter(x => isNaN(x))
+	output: ['Test', undefined, 'Hello World', 'hello', 'workd', 'null']
+
+7. Get all values which includes "e"
+	data1 = []
+	data1 = arr.filter(x => typeof(x) == 'string')
+	//['Test', '', 'Hello World', 'hello', 'workd', '-0', 'null']
+	data1.filter(x => x.includes("e"))
+	output: ['Test', 'Hello World', 'hello']
+
+8. Get all values endwith "d"
+	data1 = []
+	data1 = arr.filter(x => typeof(x) == 'string')
+	//['Test', '', 'Hello World', 'hello', 'workd', '-0', 'null']
+	data1.filter(x => x.endsWith("d"))
+	output:['Hello World', 'workd']
+
+9. Count number of falsy values
+	arr.filter(Boolean => !Boolean).length
+	output:5
+
+
+
+Estimate: 1 Hr
