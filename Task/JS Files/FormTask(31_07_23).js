@@ -1,5 +1,4 @@
-{/* <script> */}
-let arr = [];
+     let arr = [];
         $(document).ready(function(){
             $("#submit").click(function(e){
                 // let id = $('#exampleInputId').val();
@@ -22,7 +21,7 @@ let arr = [];
                 }
                 arr.push(obj);
                 console.log(arr);
-
+                
                 // let code = document.getElementById("tBody");
                 let str = "";
                 arr.map((x,i)=>{
@@ -51,7 +50,6 @@ let arr = [];
             console.log(x.parentElement);
             let dele = x.parentElement.remove();
         }
-    // </script>
 
 
 

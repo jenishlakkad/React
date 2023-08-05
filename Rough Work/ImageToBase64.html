@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image to Base64</title>
+</head>
+
+<body>
+
+  
+  <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" />
+<div id="imgTest">
+    <img src="" id="img" alt="">
+</div>
+<script type='text/javascript'>
+  function encodeImageFileAsURL() {
+
+    var filesSelected = document.getElementById("inputFileToLoad").files;
+    if (filesSelected.length > 0) {
+      var fileToLoad = filesSelected[0];
+
+      var fileReader = new FileReader();
+
+      fileReader.onload = function(fileLoadedEvent) {
+        var srcData = fileLoadedEvent.target.result; // <--- data: base64
+
+        var newImage = document.getElementById("img");
+        newImage.src = srcData;
+
+        document.getElementById("imgTest").innerHTML = newImage.outerHTML;
+        alert("Converted Base64 version is " + document.getElementById("imgTest").innerHTML);
+        console.log("Converted Base64 version is " + document.getElementById("imgTest").innerHTML);
+      }
+      fileReader.readAsDataURL(fileToLoad);
+    }
+  }
+</script>
+
+
+  <!-- <input type="file" id="fileInput">
+  <script>
+      const fileInput = document.getElementById("fileInput");
+      fileInput.addEventListener("change", e => {
+          const file = fileInput.files[0];
+          const reader = new FileReader();
+          
+          reader.addEventListener("load", () => {
+              console.log(reader.result);
+          });
+          reader.readAsDataURL(file);
+      });
+  </script> -->
+
+
+
+
+    <!-- <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" />
+    <div id="imgTest"></div>
+    <script type='text/javascript'>
+        function encodeImageFileAsURL() {
+
+            var filesSelected = document.getElementById("inputFileToLoad").files;
+            if (filesSelected.length > 0) {
+                var fileToLoad = filesSelected[0];
+
+                var fileReader = new FileReader();
+
+                fileReader.onload = function (fileLoadedEvent) {
+                    var srcData = fileLoadedEvent.target.result; // <--- data: base64
+
+                    var newImage = document.createElement('img');
+                    newImage.src = srcData;
+
+                    document.getElementById("imgTest").innerHTML = newImage.outerHTML;
+                    alert("Converted Base64 version is " + document.getElementById("imgTest").innerHTML);
+                    console.log("Converted Base64 version is " + document.getElementById("imgTest").innerHTML);
+                }
+                fileReader.readAsDataURL(fileToLoad);
+            }
+        }
+    </script> -->
+
+
+
+
+
+
+
+  <!-- <h1>Image to Base64 Conversion</h1>
+  <img id="imageElement" src="download.jpeg" alt="Image">
+
+  <script>
+    // Function to convert an image to base64
+    function imageToBase64(imagePath, callback) {
+      // Create a new HTMLImageElement
+      var img = new Image();
+
+      // Set the 'crossOrigin' attribute to 'anonymous' to handle CORS issues
+      img.crossOrigin = 'anonymous';
+
+      // Set the 'src' attribute of the image to the image path
+      img.src = imagePath;
+
+      // When the image has loaded, perform the conversion
+      img.onload = function () {
+        // Create a new HTMLCanvasElement
+        var canvas = document.createElement('canvas');
+        canvas.width = img.width;
+        canvas.height = img.height;
+
+        // Get the 2D context of the canvas
+        var ctx = canvas.getContext('2d');
+
+        // Draw the image onto the canvas
+        ctx.drawImage(img, 0, 0);
+
+        // Get the base64 representation of the image from the canvas
+        var base64Data = canvas.toDataURL('image/png');
+
+        // Call the callback function with the base64 data
+        callback(base64Data);
+      };
+    }
+
+    // Usage example:
+    var imagePath = 'Rough Work\ImageToBase64.html';
+
+    imageToBase64(imagePath, function (base64Data) {
+      console.log('Base64 Encoded Image:');
+      console.log(base64Data);
+    });
+  </script> -->
+
+
+
+</body>
+</html>
