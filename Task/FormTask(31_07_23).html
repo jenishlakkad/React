@@ -32,52 +32,52 @@
  <body>
     <div class="container">
         <div style="width: 50%; margin: 0 auto;">
-            <form>
-                <div class="mb-1">
+            <form id="form">
+                <!-- <div class="mb-1">
                     <label for="exampleInputId" class="form-label">Id:</label>
-                    <input type="text" class="form-control" id="exampleInputId" aria-describedby="idHelp">
-                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                </div>
+                    <input name="" type="text" class="form-control" id="exampleInputId" aria-describedby="idHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div> -->
                 <div class="mb-1">
                     <label for="exampleInputName" class="form-label">Name:</label>
-                    <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+                    <input name="name"  type="text" class=" text form-control" id="exampleInputName" aria-describedby="nameHelp">
                     <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                 </div>
                 <div class="mb-1">
                     <label for="exampleInputLastName" class="form-label">Last Name:</label>
-                    <input type="text" class="form-control" id="exampleInputLastName" aria-describedby="lastNameHelp">
+                    <input name="lastName" type="text" class=" text form-control" id="exampleInputLastName" aria-describedby="lastNameHelp">
                     <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                 </div>
                 <div class="mb-1">
                     <label for="exampleInputPhone" class="form-label">Phone No:</label>
-                    <input type="tel" class="form-control" id="exampleInputPhone" aria-describedby="phoneHelp">
+                    <input name="contactNo" type="tel" class=" text form-control" id="exampleInputPhone" aria-describedby="phoneHelp">
                     <!-- <div id="Help" class="form-text">We'll never share your email with anyone else.</div> -->
                   </div>
                 <div class="mb-1">
                   <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input name="email" type="email" class=" text form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                   <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                 </div>
                 <div class="mb-1">
                     <label for="chbQuantity" class="form-label">Hobbies:-</label>
                     <label for="makingMoney" class="form-label">Making Money-</label>
-                    <input type="checkbox" name="MakingMoney" id="makingMoney"  class="form-check-input">
+                    <input type="checkbox" name="MakingMoney" value="makingMoney" id="makingMoney"  class="hobby form-check-input">
                     <label for="exploring" class="form-label">Exploring-</label>
-                    <input type="checkbox" name="Exploring" id="exploring"  class="form-check-input">
+                    <input type="checkbox" name="Exploring" value="Exploring" id="exploring"  class="hobby form-check-input">
                     <label for="learning" class="form-label">Learning-</label>
-                    <input type="checkbox" name="Learning" id="learning"  class="form-check-input">
+                    <input type="checkbox" name="Learning" value="Learning" id="learning"  class="hobby form-check-input">
                 </div>
                 
                 <div class="mb-1">
-                    <label class="form-label" for="rdbGender">Gender:-</label>
+                    <label class="form-label" for="gender">Gender:-</label>
                     <label for="rdbMale">Male</label>
-                    <input type="radio" value="Male" name="rdbGender" id="rdbMale">
+                    <input type="radio" value="Male" name="gender" id="rdbMale">
                     <label for="rdbFemale">Female</label>
-                    <input type="radio" value="female" name="rdbGender" id="rdbFemale">
+                    <input type="radio" value="female" name="gender" id="rdbFemale">
                     <label for="rdbOther">Other</label>
-                    <input type="radio" value="other" name="rdbGender" id="rdbOther">
+                    <input type="radio" value="other" name="gender" id="rdbOther">
                 </div>
-                <submit type="button" id="submit" class="btn btn-primary">Submit</submit>
+                <submit type="button" onclick="saveUser()" id="submit" class="btn btn-primary">Submit</submit>
               </form>
 
               <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" />

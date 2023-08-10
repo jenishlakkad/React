@@ -6,9 +6,8 @@ let counter = JSON.parse(localStorage.getItem("id"))? JSON.parse(localStorage.ge
 
 let arr = JSON.parse(localStorage.getItem("arr"))? JSON.parse(localStorage.getItem("arr")): [];
 
-function saveUser() {
-  let crrUser = {}; //User Object
-
+let crrUser = {}; //User Object
+async function saveUser() {
   // Hobbies
   let hobby = [];
   const hobbies = document.querySelectorAll(".hobby:checked");
@@ -29,50 +28,55 @@ function saveUser() {
   });
   // console.log(crrUser);
 
+  let file = document.querySelector("#inputFileToLoad").files[0];
+  crrUser["file"] = await toBase64(file);
+
   // Id
-  if (crrUser.id){
-    const userIndex = arr.findIndex((x) => x.id == crrUser.id)
-    arr.splice(userIndex, 1 , crrUser)
-  }
-  else{
+  if (crrUser.id) {
+    const userIndex = arr.findIndex((x) => x.id == crrUser.id);
+    arr.splice(userIndex, 1, crrUser);
+  } else {
     counter = counter + 1;
     crrUser["id"] = counter;
     arr.push(crrUser);
   }
-
-  crrUser = {}
+  console.log(arr);
+  console.log(crrUser);
+  
+  crrUser = {};
   localStorage.setItem("arr", JSON.stringify(arr));
   localStorage.setItem("id", JSON.stringify(counter));
-  
+
   renderGrid();
-  document.getElementById('userForm').reset()
+  document.getElementById("userForm").reset();
 }
 
 // #################   EDIT FUNCTION
 function editUser(y) {
-  crrUser = arr.find((x) => x.id === y)
-  console.log(crrUser , 'srgrxdv');
-  let editArr = JSON.parse(localStorage.getItem('arr'))
-  const textField = document.querySelectorAll('.text')
-  Object.keys(crrUser).map((key) =>{
-    if(key === 'gender'){
-      document.querySelector(`[name=gender][value=${crrUser[key]}]`).checked = true
-    }
-    else if (key === 'hobbies'){
-      crrUser[key] = crrUser[key].split(',')
-      crrUser[key].map((x) =>{
-        document.querySelector(`.hobby[value=${x}]`).checked = true
-      })
-    }
-    else{
-      textField.forEach((x) =>{
-        if(x.name === key){
-          document.getElementsByName(key)[0].value = crrUser[key]
+  crrUser = arr.find((x) => x.id === y);
+  // console.log(crrUser , 'srgrxdv');
+  // let editArr = JSON.parse(localStorage.getItem('arr'))
+  const textField = document.querySelectorAll(".text");
+  Object.keys(crrUser).map((key) => {
+    // console.log(key);
+    if (key === "gender") {
+      document.querySelector(
+        `[name=gender][value=${crrUser[key]}]`
+      ).checked = true;
+    } else if (key === "hobbies") {
+      crrUser[key] = crrUser[key].split(",");
+      crrUser[key].map((x) => {
+        document.querySelector(`.hobby[value=${x}]`).checked = true;
+      });
+    } else {
+      textField.forEach((x) => {
+        if (x.name === key) {
+          document.getElementsByName(key)[0].value = crrUser[key];
+          // document.querySelector(`[name=${key}]`).value = crrUser[key]
         }
-      })
+      });
     }
-  }) 
-
+  });
 }
 
 // #################   DELETE FUNCTION
@@ -102,6 +106,11 @@ function renderGrid() {
             <td>${y.PhoneNo}</td>
             <td>${y.hobbies}</td>
             <td>${y.gender}</td>
+            <td>
+              <div id="imgTest">
+                <img src="${y.file}" style = "height : 60px; width : 60px" id="img" alt="">
+              </div>
+            </td>
             <td class="td8 delete" onclick="deleteUser(${y.id})" > <input  type="button" value="Delete" name="delete" style="background-color: red; " class="rounded" ></td>
             <td class="td9 edit" onclick="editUser(${y.id})" > <input  type="button" value="Edit" name="edit" style="background-color: rgb(58, 161, 240); " class="rounded" ></td>
         </tr>
@@ -110,4 +119,10 @@ function renderGrid() {
   document.querySelector("#tableGrid tbody").innerHTML = userGridString;
 }
 
-
+const toBase64 = (file) =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+  });
