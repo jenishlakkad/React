@@ -48,8 +48,8 @@ function saveUser(){
     localStorage.setItem('id', JSON.stringify(counter));
     
     renderGrid();
-    console.log(crrUser);
-    console.log(arr);
+    // console.log(crrUser);
+    // console.log(arr);
 }
 
 function editUser(y){
@@ -59,7 +59,7 @@ function editUser(y){
 function deleteUser(y){
     arr = arr.filter((x) => x.id !== y)
     localStorage.setItem('arr', JSON.stringify(arr))
-    console.log(arr);
+    // console.log(arr);
     renderGrid()
 }
 
@@ -90,9 +90,3 @@ function renderGrid(){
     document.querySelector('#tableGrid tbody').innerHTML = userGridString
 }
 
-function del(j){
-    
-    arr.map((z) => {
-        
-    })
-}
