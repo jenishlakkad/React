@@ -16,7 +16,7 @@
             border: 1px solid red;
         } */
         #outPut > div{
-            width: 70%;
+            /* width: 70%; */
             margin: 0 auto;
             padding-top: 40px;
         }
@@ -77,13 +77,13 @@
                     <label for="rdbOther">Other</label>
                     <input type="radio" value="other" name="gender" id="rdbOther">
                 </div>
+                <div id="imgTest">
+                    <img src="" id="img" alt="">
+                </div>
+                <!-- <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" /> -->
                 <submit type="button" onclick="saveUser()" id="submit" class="btn btn-primary">Submit</submit>
               </form>
 
-              <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" />
-              <div id="imgTest">
-                  <img src="" id="img" alt="">
-              </div>
         </div>
     </div>
 
@@ -105,7 +105,7 @@
                     </tr>
                 </thead>
                 <tbody id="tBody">
-                    <tr >
+                    <!-- <tr >
                         <td class="td1">01</td>
                         <td class="td2">Jenish</td>
                         <td class="td3">Lakkad</td>
@@ -115,7 +115,7 @@
                         <td class="td7">Male</td>
                         <td class="td8 delete" onclick="del(this)" > <input  type="button" value="Delete" name="delete" style="background-color: red; " class="rounded" ></td>
                         <td class="td9 edit" onclick="edit(this)" > <input  type="button" value="Edit" name="edit" style="background-color: rgb(58, 161, 240); " class="rounded" ></td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>

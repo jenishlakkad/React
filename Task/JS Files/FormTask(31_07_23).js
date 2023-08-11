@@ -24,14 +24,36 @@ const saveUser = () =>{
     hobby.forEach((x) => {
         hobbies.push(x.value)
     })
-    obj['Hobbies'] = hobbies.join(',')
+    obj['Hobbies'] = hobbies.join()
+    array.push(obj)
+    prints();
     console.log(hobbies);
     console.log(obj);
 }
 
-
-let print = () => {
+const del = () =>{
     
+}
+
+
+let prints = () => {
+    let str = ""
+    array.map((x) => {
+        return str += ` 
+    <tr >
+        <td>${x.id}</td>
+        <td>${x.name}</td>
+        <td>${x.lastName}</td>
+        <td>${x.contactNo}</td>
+        <td>${x.email}</td>
+        <td>${x.Hobbies}</td>
+        <td>${x.gender}</td>
+        <td><td class="td8 delete" onclick="del(this)" > <input  type="button" value="Delete" name="delete" style="background-color: red; " class="rounded" ></td>
+        <td class="td9 edit" onclick="edit(this)" > <input  type="button" value="Edit" name="edit" style="background-color: rgb(58, 161, 240); " class="rounded" ></td></td>
+    </tr>
+        `
+    })
+    document.querySelector('#tBody').innerHTML = str;
 }
    
    

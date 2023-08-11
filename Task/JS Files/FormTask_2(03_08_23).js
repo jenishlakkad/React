@@ -90,13 +90,13 @@ function deleteUser(y) {
 renderGrid();
 
 function renderGrid() {
-  let userArray = [];
-  userArray = JSON.parse(localStorage.getItem("arr"));
-  console.log(userArray);
+  // let userArray = [];
+  // userArray = JSON.parse(localStorage.getItem("arr"));
+  // console.log(userArray);
   let userGridString = "";
   console.log(arr);
 
-  userArray.map((y) => {
+  arr.map((y) => {
     userGridString += `
         <tr>
             <td>${y.id}</td>
