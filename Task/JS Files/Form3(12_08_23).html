@@ -1,0 +1,92 @@
+<!-- 
+    For Practice of CRUD
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+ </head>
+ <body>
+    <div class="container">
+        <h1 class="text-center">User Form</h1>
+        <form id="userForm">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Name</label>
+                <input type="email" name="name"  class="text form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" name="email" class="text form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" name="password" class="text form-control" id="exampleInputPassword1">
+            </div>
+
+            <label class=" form-check-label" for="">Hobbies:-</label>
+            <div class="mb-3  ">
+              <input type="checkbox" name="dancing" value="dancing" class="hobby form-check-input" id="exampleCheck1">
+              <label class=" form-check-label" for="exampleCheck1">Dancing</label>
+
+              <input type="checkbox" name="singing" value="singing" class="hobby form-check-input" id="exampleCheck2">
+              <label class=" form-check-label" for="exampleCheck2">Singing</label>
+              
+              <input type="checkbox" name="talking" value="talking" class="hobby form-check-input" id="exampleCheck3">
+              <label class=" form-check-label" for="exampleCheck3">Talking</label>
+            </div>
+
+            <label class=" form-check-label" for="">Gender:-</label>
+            <div class="mb-3">
+                <input class="gender form-check-input" value="Male" type="radio" name="gender" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">Male</label>
+
+                <input class="gender form-check-input" value="Female" type="radio" name="gender" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">Female</label>
+
+                <input class="gender form-check-input" value="Other" type="radio" name="gender" id="flexRadioDefault3">
+                <label class="form-check-label" for="flexRadioDefault3">Other</label>
+            </div>
+            
+            <button type="button" onclick="saveUser()" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+
+    <table id="userGrid" class="mt-5 table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Hobbies</th>
+                <th>Gender</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody class="" id="tBody">
+            <!-- <tr>
+                <td>01</td>
+                <td>Jenish</td>
+                <td>Lakkad@</td>
+                <td>asdf</td>
+                <td>Dancing</td>
+                <td>Male</td>
+                <td><input type="button" value="Delete" name="save" onclick="saveUser()" id=""></td>
+                <td><input type="button" value="Edit" name="del" onclick="delUser1()" id=""></td>
+            </tr> -->
+        </tbody>
+    </table>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="Form3(12_08_23).js"></script>
+ </body>
+ </html>

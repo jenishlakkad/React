@@ -3,8 +3,8 @@
 let array = []
 let id = 0;
 
+let obj = {}
 const saveUser = () =>{
-    let obj = {}
 
     // ####   TextField
     let textfield = document.querySelectorAll('.text')
@@ -29,12 +29,26 @@ const saveUser = () =>{
     prints();
     console.log(hobbies);
     console.log(obj);
+    document.querySelector('#form').reset();
 }
 
-const del = () =>{
+const editUser = (y) =>{
+    obj = array.find((x) => x.id === y);
+    Object.keys(obj).map((key) =>{
+        // if(key ==='gender'){
+        //     document.querySelector(`[name=gender] [value=${obj[key]}]`).checked = true;
+        // }
+        console.log(key);
+    })
+
+}
+
+const del = (y) =>{
+    array = array.filter((x) => x.id !==y)
+    prints();
+    console.log(array);
     
 }
-
 
 let prints = () => {
     let str = ""
@@ -48,8 +62,8 @@ let prints = () => {
         <td>${x.email}</td>
         <td>${x.Hobbies}</td>
         <td>${x.gender}</td>
-        <td><td class="td8 delete" onclick="del(this)" > <input  type="button" value="Delete" name="delete" style="background-color: red; " class="rounded" ></td>
-        <td class="td9 edit" onclick="edit(this)" > <input  type="button" value="Edit" name="edit" style="background-color: rgb(58, 161, 240); " class="rounded" ></td></td>
+        <td class="td8 delete" onclick="del(${x.id})" > <input  type="button" value="Delete" name="delete" style="background-color: red; " class="rounded" ></td>
+        <td class="td9 edit" onclick="editUser(${x.id})" > <input  type="button" value="Edit" name="edit" style="background-color: rgb(58, 161, 240); " class="rounded" ></td>
     </tr>
         `
     })

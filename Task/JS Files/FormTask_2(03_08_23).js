@@ -15,7 +15,7 @@ async function saveUser() {
     hobby.push(x.value);
   });
   crrUser["hobbies"] = hobby.join();
-  // console.log(hobbies);
+  console.log(hobbies);
 
   // Gender
   crrUser["gender"] = document.querySelector(".gender:checked").value;
@@ -60,15 +60,15 @@ function editUser(y) {
   Object.keys(crrUser).map((key) => {
     // console.log(key);
     if (key === "gender") {
-      document.querySelector(
-        `[name=gender][value=${crrUser[key]}]`
-      ).checked = true;
-    } else if (key === "hobbies") {
+      document.querySelector(`[name=gender][value=${crrUser[key]}]`).checked = true;
+    } 
+    else if (key === "hobbies") {
       crrUser[key] = crrUser[key].split(",");
       crrUser[key].map((x) => {
         document.querySelector(`.hobby[value=${x}]`).checked = true;
       });
-    } else {
+    }  
+    else {
       textField.forEach((x) => {
         if (x.name === key) {
           document.getElementsByName(key)[0].value = crrUser[key];
@@ -126,3 +126,6 @@ const toBase64 = (file) =>
     reader.onload = () => resolve(reader.result);
     reader.onerror = reject;
   });
+
+
+
