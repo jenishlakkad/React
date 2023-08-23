@@ -1,10 +1,10 @@
 let userForm = document.querySelector('#userForm')
 
 const arr = []
-const obj = {}
 
 let counter = 0
 const saveUser = () =>{
+    const obj = {}
     // Hobbies:-
     let hobbies = []
     let hobby = document.querySelectorAll('.hobbies:checked');
@@ -32,8 +32,44 @@ const saveUser = () =>{
     userForm.reset()
     
     console.log(obj);
-    obj = {};
+    // obj = {};
 }
+
+// const del = (y) =>{
+
+// }
+
+function editUser(y){
+    obj = arr.find((x) => x.ID === y)
+
+    Object.keys(obj).map((key) =>{
+        if (key === "Gender"){
+            document.querySelector(`[name=gender] [value=${obj[key]}]`).checked = true;
+        }
+        else if (key === "Hobbies"){
+            obj[key] = obj[key].split(',');
+            obj[key].map((x) => {
+                document.querySelector(`.hobby[value=${x}]`).checked = true
+            })
+        }
+        else{
+            const textField = document.querySelectorAll('.text')
+            textField.forEach((x) => {
+                if(x.name === key){
+                    document.querySelector(`[name=${key}]`).value = obj[key];
+                }
+            })
+        }
+    })
+}
+
+function del(y){
+    arr = arr.filter((x) => x.ID !== y);
+    userData()
+    console.log(y);
+}
+
+
 // userData()
 const userData = () => {
     let userGridString = ''
@@ -47,6 +83,8 @@ const userData = () => {
             <td>${x.password}</td>
             <td>${x.Gender}</td>
             <td>${x.Hobbies}</td>
+            <td><input type="button" onclick="editUser(${x.ID})" name="edit" value="Edit" id="edit"></td>
+            <td><input type="button" onclick="del(${x.ID})" name="delete" value="Delete" id="delete"></td>
         </tr>
 
         `
@@ -55,3 +93,5 @@ const userData = () => {
     
 
 }
+
+
